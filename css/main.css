@@ -1765,7 +1765,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff8f66;
+  background: #5dff8b;
 }
 .feed-link,
 .chat {
@@ -2512,7 +2512,7 @@ span.site-title {
   border: 1px solid rgba(164,162,165,0.8);
   background: #fff;
   margin-top: 50px;
-  box-shadow: 3px 3px 15px -2px #dadaec;
+  box-shadow: 3px 3px 15px -2px #a0a0a3;
 }
 .posts-expand {
   padding: 40px 50px 40px 50px;
@@ -2578,4 +2578,16 @@ a.theme-link:hover,
   border-left: 3px solid #a6c1ee;
   box-shadow: -10px 0px 10px -9px #c6cabd;
   padding: 0 20px 0;
+}
+.feed-link,
+.chat {
+  margin-top: 30px;
+}
+.feed-link a,
+.chat a {
+  color: #fc6423;
+}
+.feed-link a:hover,
+.chat a:hover {
+  color: #fff;
 }
