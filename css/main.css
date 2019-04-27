@@ -1765,7 +1765,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff8e;
+  background: #7ff999;
 }
 .feed-link,
 .chat {
@@ -2506,13 +2506,13 @@ span.site-title {
   color: #51515d;
   font-weight: bold;
   text-shadow: 5px 5px 20px #f0f0f3;
+  letter-spacing: 3px;
 }
 .content {
   border: 1px solid rgba(164,162,165,0.8);
   background: #fff;
   margin-top: 50px;
   box-shadow: 3px 3px 15px -2px #dadaec;
-  letter-spacing: 3px;
 }
 .posts-expand {
   padding: 40px 50px 40px 50px;
