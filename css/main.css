@@ -1765,7 +1765,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #32d5ff;
+  background: #21492a;
 }
 .feed-link,
 .chat {
@@ -2647,15 +2647,6 @@ a.category-list-link:hover {
   color: #e17bbc;
   border-bottom-color: #e17bbc;
 }
-.tag-cloud-tags a {
-  display: inline-block;
-  margin: 10px;
-  font-size: 20px;
-  transition: 0.2s;
-  color: #81a1d8;
-  border-bottom-color: #81a1d8;
-}
-.tag-cloud-tags a:hover {
-  color: #e17bbc;
-  border-bottom-color: #e17bbc;
+.category-all-page .category-list {
+  text-align: center;
 }
