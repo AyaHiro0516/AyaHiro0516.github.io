@@ -1765,7 +1765,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #87b117;
+  background: #73ff16;
 }
 .feed-link,
 .chat {
@@ -2020,21 +2020,13 @@ pre .javascript .function {
     transform: scale(1.1);
   }
 }
-#gitment-display-button {
-  display: inline-block;
-  padding: 0 15px;
-  color: #0a9caf;
-  cursor: pointer;
-  font-size: 14px;
-  border: 1px solid #0a9caf;
-  border-radius: 4px;
-}
-#gitment-display-button:hover {
-  color: #fff;
-  background: #0a9caf;
-}
-#gitment-container a {
+.gt-header a,
+.gt-comments a,
+.gt-popup a {
   border-bottom: none;
+}
+.gt-container .gt-popup .gt-action.is--active:before {
+  top: 0.7em;
 }
 .local-search-pop-overlay {
   position: fixed;
@@ -2700,7 +2692,7 @@ a.category-list-link:hover {
   box-shadow: 0px 0px 20px rgba(242,105,37,0.8);
 }
 .gitment-container.gitment-root-container {
-  background: rgba(250,234,213,0.95);
+  background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);
   padding: 10px 40px 10px 40px;
   border: 5px solid rgba(255,255,255,0.9);
   border-radius: 15px;
