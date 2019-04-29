@@ -96,13 +96,13 @@
 
 
 
-  <meta name="description" content="写在前面：Netty是Java的网络编程框架，既然是框架的学习，不免会碰到很多分支的知识和不熟悉的名词。这就需要不断的做“下潜”，耐心搜索，不求甚解，等到大致熟悉之后再去逐一深究。因此有些概念作者也不能做出详细解释，请参考贴出的相关文章或自行搜索以解决疑惑。 什么是Netty网上很多文章都有作解释。以作者的使用体验来说，Netty是封装了 Java socket nio 来进行网络编程的工具。说到">
+  <meta name="description" content="写在前面：Netty是Java的网络编程框架，既然是框架的学习，不免会碰到很多分支的知识和不熟悉的名词。这就需要不断的做“下潜”，耐心搜索，不求甚解，等到大致熟悉之后再去逐一深究。因此有些概念作者也不能做出详细解释，请参考贴出的相关文章或自行搜索以解决疑惑。">
 <meta name="keywords" content="Java,Netty">
 <meta property="og:type" content="article">
 <meta property="og:title" content="初始Netty —— 实现简单的C&#x2F;S通信">
 <meta property="og:url" content="http://yoursite.com/2019/04/28/first_Netty/index.html">
 <meta property="og:site_name" content="AYAHIRO&#39;S BLOG">
-<meta property="og:description" content="写在前面：Netty是Java的网络编程框架，既然是框架的学习，不免会碰到很多分支的知识和不熟悉的名词。这就需要不断的做“下潜”，耐心搜索，不求甚解，等到大致熟悉之后再去逐一深究。因此有些概念作者也不能做出详细解释，请参考贴出的相关文章或自行搜索以解决疑惑。 什么是Netty网上很多文章都有作解释。以作者的使用体验来说，Netty是封装了 Java socket nio 来进行网络编程的工具。说到">
+<meta property="og:description" content="写在前面：Netty是Java的网络编程框架，既然是框架的学习，不免会碰到很多分支的知识和不熟悉的名词。这就需要不断的做“下潜”，耐心搜索，不求甚解，等到大致熟悉之后再去逐一深究。因此有些概念作者也不能做出详细解释，请参考贴出的相关文章或自行搜索以解决疑惑。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://blog.duohuo.org/wp-content/uploads/2019/01/2d5cd63552e26e1c12d11902c2a05bdc.png">
 <meta property="og:image" content="http://blog.duohuo.org/wp-content/uploads/2019/01/27d52ce0891ede08b68a32fcc9281ae2.png">
@@ -110,10 +110,10 @@
 <meta property="og:image" content="http://blog.duohuo.org/wp-content/uploads/2019/01/781c5efd2db39cccd9f49ba70af253bc.png">
 <meta property="og:image" content="http://blog.duohuo.org/wp-content/uploads/2019/01/6288b3985b7af37895fcf2f1b63be69a.png">
 <meta property="og:image" content="http://blog.duohuo.org/wp-content/uploads/2019/01/3db8b4f3bc3dd1ce8d37dcc875dfc5c9.png">
-<meta property="og:updated_time" content="2019-04-28T12:10:01.702Z">
+<meta property="og:updated_time" content="2019-04-29T11:02:27.785Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初始Netty —— 实现简单的C&#x2F;S通信">
-<meta name="twitter:description" content="写在前面：Netty是Java的网络编程框架，既然是框架的学习，不免会碰到很多分支的知识和不熟悉的名词。这就需要不断的做“下潜”，耐心搜索，不求甚解，等到大致熟悉之后再去逐一深究。因此有些概念作者也不能做出详细解释，请参考贴出的相关文章或自行搜索以解决疑惑。 什么是Netty网上很多文章都有作解释。以作者的使用体验来说，Netty是封装了 Java socket nio 来进行网络编程的工具。说到">
+<meta name="twitter:description" content="写在前面：Netty是Java的网络编程框架，既然是框架的学习，不免会碰到很多分支的知识和不熟悉的名词。这就需要不断的做“下潜”，耐心搜索，不求甚解，等到大致熟悉之后再去逐一深究。因此有些概念作者也不能做出详细解释，请参考贴出的相关文章或自行搜索以解决疑惑。">
 <meta name="twitter:image" content="http://blog.duohuo.org/wp-content/uploads/2019/01/2d5cd63552e26e1c12d11902c2a05bdc.png">
 
 
@@ -380,12 +380,24 @@
                 
               
 
-              <time title="创建时间：2019-04-28 20:08:33 / 修改时间：20:10:01" itemprop="dateCreated datePublished" datetime="2019-04-28T20:08:33+08:00">2019-04-28</time>
+              <time title="创建时间：2019-04-28 20:08:33" itemprop="dateCreated datePublished" datetime="2019-04-28T20:08:33+08:00">2019-04-28</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-29 19:02:27" itemprop="dateModified" datetime="2019-04-29T19:02:27+08:00">2019-04-29</time>
               
             
           </span>
@@ -457,8 +469,8 @@
       
 
       
-        <p>写在前面：<br>Netty是Java的网络编程框架，既然是框架的学习，不免会碰到很多分支的知识和不熟悉的名词。这就需要不断的做“下潜”，耐心搜索，不求甚解，等到大致熟悉之后再去逐一深究。因此有些概念作者也不能做出详细解释，请参考贴出的相关文章或自行搜索以解决疑惑。</p>
-<h3 id="什么是Netty"><a href="#什么是Netty" class="headerlink" title="什么是Netty"></a>什么是Netty</h3><p>网上很多文章都有作解释。以作者的使用体验来说，Netty是封装了 Java socket nio 来进行网络编程的工具。说到网络编程，大二软工的软件工程实训就有这个小课题，当时作者是用Java socket io来写，还没用到nio呢，就是参照网上的例子手动模拟通信过程，自己用最简单的 <strong>阻塞I/O</strong> 的模式写了一个Thread类来处理所有不同种类的请求，由于需求简单，尚能完成。 想要模拟效果更自然一点就要用 <strong>非阻塞I/O</strong> 模式，而nio就是用来写非阻塞I/O的api。但是nio的编写对java程序员是有比较高的要求的。Netty就可以简化这一系列操作。<br><a id="more"></a></p>
+        <p>写在前面：<br>Netty是Java的网络编程框架，既然是框架的学习，不免会碰到很多分支的知识和不熟悉的名词。这就需要不断的做“下潜”，耐心搜索，不求甚解，等到大致熟悉之后再去逐一深究。因此有些概念作者也不能做出详细解释，请参考贴出的相关文章或自行搜索以解决疑惑。<br><a id="more"></a></p>
+<h3 id="什么是Netty"><a href="#什么是Netty" class="headerlink" title="什么是Netty"></a>什么是Netty</h3><p>网上很多文章都有作解释。以作者的使用体验来说，Netty是封装了 Java socket nio 来进行网络编程的工具。说到网络编程，大二软工的软件工程实训就有这个小课题，当时作者是用Java socket io来写，还没用到nio呢，就是参照网上的例子手动模拟通信过程，自己用最简单的 <strong>阻塞I/O</strong> 的模式写了一个Thread类来处理所有不同种类的请求，由于需求简单，尚能完成。 想要模拟效果更自然一点就要用 <strong>非阻塞I/O</strong> 模式，而nio就是用来写非阻塞I/O的api。但是nio的编写对java程序员是有比较高的要求的。Netty就可以简化这一系列操作。<br><!--more--></p>
 <h3 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h3><p>贴几个比较靠谱的博客，不求甚解，大致了解一下就好。<br>关于NIO：<br><a href="https://www.jianshu.com/p/3cec590a122f" target="_blank" rel="noopener">https://www.jianshu.com/p/3cec590a122f</a>  (推荐，也包括I/O模型)<br><a href="https://my.oschina.net/andylucc/blog/614295" target="_blank" rel="noopener">https://my.oschina.net/andylucc/blog/614295</a><br>关于I/O模型：<br><a href="https://segmentfault.com/a/1190000003063859" target="_blank" rel="noopener">https://segmentfault.com/a/1190000003063859</a></p>
 <h3 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h3><p>java JDK1.8 + IDEA + maven + Netty 4.1.6<br>maven依赖：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">           &lt;groupId&gt;io.netty&lt;/groupId&gt;</span><br><span class="line">           &lt;artifactId&gt;netty-all&lt;/artifactId&gt;</span><br><span class="line">           &lt;version&gt;4.1.6.Final&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
 <h3 id="实现功能"><a href="#实现功能" class="headerlink" title="实现功能"></a>实现功能</h3><p>C/S通信：C是客户端，S是服务端。在IDEA控制台开启服务端接收客户端的信息String, 并返回一个“hi!”+String，客户端收到服务端的信息后在控制台上输出。</p>
@@ -557,7 +569,8 @@
 
   
 
-
+  
+  
 
         </div>
         
@@ -625,9 +638,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -650,11 +661,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -960,6 +967,40 @@
 
 
 
+
+  
+    <!-- LOCAL: You can save these files to your site and update links -->
+
+  
+  <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitmint.browser.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css">
+<!-- END LOCAL -->
+
+<script>
+  function renderGitment() {
+    var gitment = new Gitmint({
+      id: window.location.pathname,
+      owner: 'AyaHiro0516# MUST HAVE, Your Github Username',
+      repo: 'blog-comment',
+      
+        lang: '' || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+      
+      oauth: {
+      
+      
+        client_secret: '1800798c4d14ff1254df586165e5fcc112fa5ece# EITHER this or proxy_gateway, Github access secret token for the Gitment',
+      
+        client_id: '71cc413d9fe5df3f4808'
+      }
+    });
+    gitment.render('gitment-container');
+  }
+
+  
+    renderGitment();
+  
+</script>
 
   
 

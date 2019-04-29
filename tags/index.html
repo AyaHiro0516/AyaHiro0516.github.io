@@ -375,19 +375,11 @@
                   
                 
               
-                
-                  
-                
-              
-                
-                  
-                
-              
-              目前共计 5 个标签
+              目前共计 3 个标签
             </div>
             <div class="tag-cloud-tags">
               
-				<a href="/tags/Another-Tag/" style="font-size: 16px; color: #81a1d8">Another Tag</a> <a href="/tags/Java/" style="font-size: 16px; color: #81a1d8">Java</a> <a href="/tags/Netty/" style="font-size: 16px; color: #81a1d8">Netty</a> <a href="/tags/SpringBoot/" style="font-size: 16px; color: #81a1d8">SpringBoot</a> <a href="/tags/Testing/" style="font-size: 16px; color: #81a1d8">Testing</a>
+				<a href="/tags/Java/" style="font-size: 16px; color: #81a1d8">Java</a> <a href="/tags/Netty/" style="font-size: 16px; color: #81a1d8">Netty</a> <a href="/tags/SpringBoot/" style="font-size: 16px; color: #81a1d8">SpringBoot</a>
                 
               
             </div>
@@ -410,6 +402,40 @@
 
           </div>
           
+<div onclick="showGitment()" id="gitment_title" class="gitment_title">显示 Gitment 评论</div>
+<div id="container" style="display:none"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+const myTheme = {
+render(state, instance) {
+const container = document.createElement('div');
+container.lang = "en-US";
+container.className = 'gitment-container gitment-root-container';
+container.appendChild(instance.renderHeader(state, instance));
+container.appendChild(instance.renderEditor(state, instance));
+container.appendChild(instance.renderComments(state, instance));
+container.appendChild(instance.renderFooter(state, instance));
+return container;
+}
+}
+function showGitment() {
+$("#gitment_title").attr("style", "display:none");
+$("#container").attr("style", "").addClass("gitment_container");
+var gitment = new Gitment({
+id: window.location.pathname,
+theme: myTheme,
+owner: '',
+repo: '',
+oauth: {
+client_id: '71cc413d9fe5df3f4808',
+client_secret: '1800798c4d14ff1254df586165e5fcc112fa5ece# EITHER this or proxy_gateway, Github access secret token for the Gitment'
+}
+});
+gitment.render('container');
+}
+</script>
+
 
         </div>
         
@@ -468,9 +494,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -493,11 +517,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
