@@ -434,7 +434,7 @@
             
                 <span class="post-meta-item-text">评论数：</span>
                 <a href="/2019/04/28/first_Netty/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/04/28/first_Netty/" itemprop="commentCount"></span>
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/04/28/first_Netty/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -562,11 +562,13 @@
 
   
     <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
 
-  
   
 
         </div>
@@ -976,41 +978,51 @@
 
   
     
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
-   <script type="text/javascript">
-        var gitalk = new Gitalk({
-          clientID: '',
-          clientSecret: '',
-          repo: 'AyaHiro0516.github.io',
-          owner: '',
-          admin: [''],
-          id: md5(window.location.pathname),
-          distractionFreeMode: ''
-        })
-        gitalk.render('gitalk-container')
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://jjeejj.github.io/js/gitment.js"></script>
+   
+       <script type="text/javascript">
+           var gitment = new Gitment({
+              id: window.location.pathname, 
+               owner: '',
+               repo: '',
+               oauth: {
+                   client_id: '',
+                   client_secret: '',
+               }});
+           gitment.render('gitment-container');
        </script>
+   
+
 
   
 
 
 
-  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-  <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
-   <script type="text/javascript">
-        var gitalk = new Gitalk({
-          clientID: '',
-          clientSecret: '',
-          repo: 'AyaHiro0516.github.io',
-          owner: '',
-          admin: [''],
-          id: md5(window.location.pathname),
-          distractionFreeMode: ''
-        })
-        gitalk.render('gitalk-container')
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://jjeejj.github.io/js/gitment.js"></script>
+   
+       <script type="text/javascript">
+           var gitment = new Gitment({
+              id: window.location.pathname, 
+               owner: '',
+               repo: '',
+               oauth: {
+                   client_id: '',
+                   client_secret: '',
+               }});
+           gitment.render('gitment-container');
        </script>
+   
 
 
   
