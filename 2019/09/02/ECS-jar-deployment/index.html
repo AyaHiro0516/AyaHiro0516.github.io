@@ -108,7 +108,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/09/02/ECS-jar-deployment/控制台命令行.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/02/ECS-jar-deployment/SSH客户端命令行.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/02/ECS-jar-deployment/上传文件.png">
-<meta property="og:updated_time" content="2019-09-03T06:58:49.098Z">
+<meta property="og:updated_time" content="2019-09-03T11:58:09.272Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初次部署SpringBoot项目的记录">
 <meta name="twitter:description" content="网上关于SpringBoot部署相关的文章一大堆，依葫芦画瓢就行，但还是会遇到些许坑点，主要还是自己没什么常识，在此简单记录一下部署项目从无到有的全过程吧。">
@@ -395,7 +395,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-09-03 14:58:49" itemprop="dateModified" datetime="2019-09-03T14:58:49+08:00">2019-09-03</time>
+                <time title="修改时间：2019-09-03 19:58:09" itemprop="dateModified" datetime="2019-09-03T19:58:09+08:00">2019-09-03</time>
               
             
           </span>
@@ -461,7 +461,7 @@
 <p>之后就可以连接买好的云服务器了，可以直接在阿里云的控制台右上角点击“远程连接”，然后就出现了Linux的命令行界面。这样连接每次都要打开网页登录，但省事。<br><img src="/2019/09/02/ECS-jar-deployment/控制台命令行.png" alt="控制台命令行"></p>
 <p>也可以选择使用SSH客户端连接，Windows要装个OpenSSH客户端，然后命令行输入 ssh 用户名@公网IP 连接即可。<br><img src="/2019/09/02/ECS-jar-deployment/SSH客户端命令行.png" alt="SSH客户端命令行"></p>
 <h3 id="开放配置端口"><a href="#开放配置端口" class="headerlink" title="开放配置端口"></a>开放配置端口</h3><p>连完了之后要开放一些端口供项目访问，需要注意一点，在阿里云控制台 安全-防火墙-添加规则 之后，还需要进入要服务器修改/etc/sysconfig/iptables中的配置。具体参考<a href="https://blog.csdn.net/julielele/article/details/78730796" target="_blank" rel="noopener">这篇博客</a>。</p>
-<h3 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h3><p>服务器要获得项目的代码才能部署阿，可以在服务器上用git拉取代码，然后maven打jar包等一些列操作，感觉有点麻烦…第一次部署怕出错，所以就选择本地打完jar包之后上传到服务就。 上传文件的软件有很多，自行选择，我选择了WinSCP。图形界面软件操作就非常简单了。<br><img src="/2019/09/02/ECS-jar-deployment/上传文件.png" alt="上传文件"></p>
+<h3 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h3><p>服务器要获得项目的代码才能部署阿，可以在服务器上用git拉取代码，然后maven打jar包等一些列操作，感觉有点麻烦…第一次部署怕出错，所以就选择本地打完jar包之后上传到服务了。 上传文件的软件有很多，自行选择，我选择了WinSCP。图形界面软件操作就非常简单了。<br><img src="/2019/09/02/ECS-jar-deployment/上传文件.png" alt="上传文件"></p>
 <h3 id="部署项目"><a href="#部署项目" class="headerlink" title="部署项目"></a>部署项目</h3><p>传好jar包，然后就可以部署了，SpringBoot以jar包方式部署的博客网上也一大堆，按部就班就可以，但能不能运行起来，运行起来能不能正常使用所有功能又是另外一回事了。</p>
 <h3 id="自己遇到的问题"><a href="#自己遇到的问题" class="headerlink" title="自己遇到的问题"></a>自己遇到的问题</h3><ul>
 <li><p>linux的MySQL表名区分大小写，自己建表时没有按照数据库命名规范来建表。</p>
