@@ -96,19 +96,19 @@
 
 
 
-  <meta name="description" content="看网课的一些笔记 影响性能的几个方面 服务器硬件  CPU 内存 I/O子系统 网络 服务器操作系统 数据库存储引擎的选择 数据库参数配置 =&amp;gt; 影响巨大 数据库结构设计和SQL语句 =&amp;gt; 慢查询  数据库结构优化目的:  减少数据冗余 尽量避免数据维护中出现更新，插入，删除异常 插入异常: 表中某个实体随另一个实体存在 更改表中某个实体的单独属性时，需要对多行进行更新 删除b表中的某">
+  <meta name="description" content="看网课的一些笔记 📝">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL-Note">
 <meta property="og:url" content="http://yoursite.com/2019/10/23/mysql-note/index.html">
 <meta property="og:site_name" content="AYAHIRO&#39;S BLOG">
-<meta property="og:description" content="看网课的一些笔记 影响性能的几个方面 服务器硬件  CPU 内存 I/O子系统 网络 服务器操作系统 数据库存储引擎的选择 数据库参数配置 =&amp;gt; 影响巨大 数据库结构设计和SQL语句 =&amp;gt; 慢查询  数据库结构优化目的:  减少数据冗余 尽量避免数据维护中出现更新，插入，删除异常 插入异常: 表中某个实体随另一个实体存在 更改表中某个实体的单独属性时，需要对多行进行更新 删除b表中的某">
+<meta property="og:description" content="看网课的一些笔记 📝">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/10/23/mysql-note/engine.png">
-<meta property="og:updated_time" content="2019-10-23T14:37:26.523Z">
+<meta property="og:updated_time" content="2019-10-25T06:50:00.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL-Note">
-<meta name="twitter:description" content="看网课的一些笔记 影响性能的几个方面 服务器硬件  CPU 内存 I/O子系统 网络 服务器操作系统 数据库存储引擎的选择 数据库参数配置 =&amp;gt; 影响巨大 数据库结构设计和SQL语句 =&amp;gt; 慢查询  数据库结构优化目的:  减少数据冗余 尽量避免数据维护中出现更新，插入，删除异常 插入异常: 表中某个实体随另一个实体存在 更改表中某个实体的单独属性时，需要对多行进行更新 删除b表中的某">
+<meta name="twitter:description" content="看网课的一些笔记 📝">
 <meta name="twitter:image" content="http://yoursite.com/2019/10/23/mysql-note/engine.png">
 
 
@@ -375,12 +375,24 @@
                 
               
 
-              <time title="创建时间：2019-10-23 21:33:06 / 修改时间：22:37:26" itemprop="dateCreated datePublished" datetime="2019-10-23T21:33:06+08:00">2019-10-23</time>
+              <time title="创建时间：2019-10-23 21:33:06" itemprop="dateCreated datePublished" datetime="2019-10-23T21:33:06+08:00">2019-10-23</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-10-25 14:50:00" itemprop="dateModified" datetime="2019-10-25T14:50:00+08:00">2019-10-25</time>
               
             
           </span>
@@ -439,20 +451,21 @@
       
 
       
-        <p>看网课的一些笔记</p>
-<h3 id="影响性能的几个方面"><a href="#影响性能的几个方面" class="headerlink" title="影响性能的几个方面"></a>影响性能的几个方面</h3><ul>
+        <p>看网课的一些笔记 📝</p>
+<a id="more"></a>
+<h3 id="影响性能的几个方面-🔰"><a href="#影响性能的几个方面-🔰" class="headerlink" title="影响性能的几个方面 🔰"></a>影响性能的几个方面 🔰</h3><ul>
 <li>服务器硬件  CPU 内存 I/O子系统 网络</li>
 <li>服务器操作系统</li>
 <li>数据库存储引擎的选择</li>
 <li>数据库参数配置 =&gt; 影响巨大</li>
 <li>数据库结构设计和SQL语句 =&gt; 慢查询</li>
 </ul>
-<h3 id="数据库结构优化"><a href="#数据库结构优化" class="headerlink" title="数据库结构优化"></a>数据库结构优化</h3><p>目的:</p>
+<h3 id="数据库结构优化-🔧"><a href="#数据库结构优化-🔧" class="headerlink" title="数据库结构优化 🔧"></a>数据库结构优化 🔧</h3><p>目的:</p>
 <ul>
 <li>减少数据冗余</li>
-<li>尽量避免数据维护中出现更新，插入，删除异常<ul>
+<li>尽量避免数据维护中出现更新, 插入, 删除异常<ul>
 <li>插入异常: 表中某个实体随另一个实体存在</li>
-<li>更改表中某个实体的单独属性时，需要对多行进行更新</li>
+<li>更改表中某个实体的单独属性时, 需要对多行进行更新</li>
 <li>删除b表中的某一实体会导致其他实体的消失</li>
 </ul>
 </li>
@@ -474,18 +487,18 @@
 </ul>
 <p><strong>在范式化基础上适当反范式化</strong></p>
 <h4 id="物理设计"><a href="#物理设计" class="headerlink" title="物理设计"></a>物理设计</h4><p>选择合适的存储引擎:<br><img src="/2019/10/23/mysql-note/engine.png" alt="引擎"></p>
-<p>为表中的字段选择合适的数据类型:<br>当一个列可以选择多种数据类型时，应该优先考虑数字类型，其次是日期或二进制类型，最后是字符类型。对于相同级别的数据类型，应该优先选择占用空间小的数据类型。</p>
+<p>为表中的字段选择合适的数据类型:<br>当一个列可以选择多种数据类型时, 应该优先考虑数字类型, 其次是日期或二进制类型, 最后是字符类型. 对于相同级别的数据类型, 应该优先选择占用空间小的数据类型.</p>
 <ul>
 <li>财务相关数据应选择decimal</li>
-<li>varchar和char的宽度是以字符(而不是字节)为单位，如UTF-8一个字符占用3个字节</li>
-<li>varchar不定长，适用场景：<ol>
+<li>varchar和char的宽度是以字符(而不是字节)为单位, 如UTF-8一个字符占用3个字节</li>
+<li>varchar不定长, 适用场景: <ol>
 <li>字符串列的最大长度比平均长度大很多</li>
 <li>字符串列很少被更新</li>
 <li>使用了多字节字符集(UTF-8)存储字符串</li>
 </ol>
 </li>
-<li>char定长，适用场景：<ol>
-<li>适合存储长度近似的值(md5,身份证)</li>
+<li>char定长, 适用场景: <ol>
+<li>适合存储长度近似的值(md5, 身份证)</li>
 <li>短字符串(性别)</li>
 <li>经常更新的字符串列</li>
 </ol>
@@ -493,9 +506,9 @@
 </ul>
 <p>日期类型:</p>
 <ul>
-<li>datatime: YYYY-MM-DD HH:MM:SS[.fraction]<br>  与时区无关，占用8个字节<br>  范围: 1000-01-01 00:00:00 – 9999-12-31 23:59:59</li>
-<li>timestamp: YYYY-MM-DD HH:MM:SS[.fraction]<br>  时区有关，时间戳，占用4个字节 在行的数据修改时可以自动修改timestamp列的值<br>  范围: 1970-01-01 00:00:00 – 2038-01-19 23:59:59</li>
-<li>date: YYYY-MM-DD<br>  可以用date存储日期，只要3个字节<br>  可以用日期时间函数进行日期间的计算<br>  范围: 1000-01-01 – 9999-12-31</li>
+<li>datatime: YYYY-MM-DD HH:MM:SS[.fraction]<br>  与时区无关, 占用8个字节<br>  范围: 1000-01-01 00:00:00 – 9999-12-31 23:59:59</li>
+<li>timestamp: YYYY-MM-DD HH:MM:SS[.fraction]<br>  时区有关, 时间戳, 占用4个字节 在行的数据修改时可以自动修改timestamp列的值<br>  范围: 1970-01-01 00:00:00 – 2038-01-19 23:59:59</li>
+<li>date: YYYY-MM-DD<br>  可以用date存储日期, 只要3个字节<br>  可以用日期时间函数进行日期间的计算<br>  范围: 1000-01-01 – 9999-12-31</li>
 <li>time: HH:MM:SS[.fraction]</li>
 </ul>
 <p><strong>不要用字符串类型存储日期时间</strong></p>
@@ -504,6 +517,52 @@
 <li>主键应该尽可能的小</li>
 <li>主键应该是顺序增长的</li>
 <li>InnoDB的主键和业务主键可以不同</li>
+</ul>
+<h3 id="数据库索引优化-📌"><a href="#数据库索引优化-📌" class="headerlink" title="数据库索引优化 📌"></a>数据库索引优化 📌</h3><p>为什么使用索引:</p>
+<ul>
+<li>大大减少了存储引擎需要扫描的数据量</li>
+<li>进行排序时避免使用临时表</li>
+<li>可以把随机I/O变为顺序I/O</li>
+</ul>
+<p>索引不是越多越好:</p>
+<ul>
+<li>会增加写操作的成本</li>
+<li>会增加查询优化器的选择时间</li>
+</ul>
+<h4 id="B-tree索引"><a href="#B-tree索引" class="headerlink" title="B-tree索引"></a>B-tree索引</h4><p>特点:</p>
+<ul>
+<li>以B+树结构存储数据</li>
+<li>加快数据查询速度</li>
+<li>适合进行范围查找</li>
+</ul>
+<p>什么时候用到 😊</p>
+<ul>
+<li>等值查询<br>  user_name=”bxy”</li>
+<li>匹配最左前缀查询<br>  联合索引(user_name, id)  查询条件为user_name列时, 会使用该联合索引</li>
+<li>匹配列前缀查询<br>  user_name like ‘bx%’</li>
+<li>范围查找<br>  id &gt; 10 and id &lt; 100</li>
+<li>精确匹配左前列并范围匹配另外一列<br>  精确匹配user_name 并范围查询id</li>
+<li>只访问索引的查询<br>  只需访问索引, 无需访问数据行(无需回表操作) 即覆盖索引</li>
+</ul>
+<p>使用限制 😔</p>
+<ul>
+<li>如果不是按照索引最左列开始查找，则无法使用索引<br>  联合索引(user_name, id)  查询条件为id列时, 无法使用该联合索引</li>
+<li>使用索引时不能跳过索引中的列<br>  联合索引(user_name, id, role) 查询条件包含user_name和role 只有user_name会用到该联合索引</li>
+<li>not in 和 &lt;&gt; 操作无法使用索引</li>
+<li>如果查询中有某个列的范围查询，则其右边的所有列都无法使用索引<br>  联合索引(id, role, …) id使用范围查询, 则其右边的列都无法使用索引</li>
+</ul>
+<h4 id="Hash索引"><a href="#Hash索引" class="headerlink" title="Hash索引"></a>Hash索引</h4><p>特点:</p>
+<ul>
+<li>基于hash表实现</li>
+<li>只能用在等值查询中</li>
+<li>hash索引中的所有列, 存储引擎都会每一行计算一个hash码, hash索引中存储的是hash码</li>
+</ul>
+<p>限制: </p>
+<ul>
+<li>hash索引必须进行二次查找<br>  索引中没有保存字段的值, 先通过hash索引找到对应的行, 再从行中读取字段</li>
+<li>无法用于排序</li>
+<li>不支持部分索引查找也不支持范围查找</li>
+<li>hash码的计算可能存在hash冲突, 不适合用用在选择性差的列上(如性别, 只有男和女)</li>
 </ul>
 
       
@@ -771,7 +830,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#影响性能的几个方面"><span class="nav-number">1.</span> <span class="nav-text">影响性能的几个方面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库结构优化"><span class="nav-number">2.</span> <span class="nav-text">数据库结构优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑设计"><span class="nav-number">2.1.</span> <span class="nav-text">逻辑设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#物理设计"><span class="nav-number">2.2.</span> <span class="nav-text">物理设计</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#影响性能的几个方面-🔰"><span class="nav-number">1.</span> <span class="nav-text">影响性能的几个方面 🔰</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库结构优化-🔧"><span class="nav-number">2.</span> <span class="nav-text">数据库结构优化 🔧</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑设计"><span class="nav-number">2.1.</span> <span class="nav-text">逻辑设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#物理设计"><span class="nav-number">2.2.</span> <span class="nav-text">物理设计</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库索引优化-📌"><span class="nav-number">3.</span> <span class="nav-text">数据库索引优化 📌</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#B-tree索引"><span class="nav-number">3.1.</span> <span class="nav-text">B-tree索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hash索引"><span class="nav-number">3.2.</span> <span class="nav-text">Hash索引</span></a></li></ol></li></ol></div>
             
 
           </div>
