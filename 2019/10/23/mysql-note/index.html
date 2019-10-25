@@ -105,7 +105,7 @@
 <meta property="og:description" content="看网课的一些笔记 📝">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/10/23/mysql-note/engine.png">
-<meta property="og:updated_time" content="2019-10-25T06:50:00.603Z">
+<meta property="og:updated_time" content="2019-10-25T07:03:57.418Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL-Note">
 <meta name="twitter:description" content="看网课的一些笔记 📝">
@@ -392,7 +392,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-10-25 14:50:00" itemprop="dateModified" datetime="2019-10-25T14:50:00+08:00">2019-10-25</time>
+                <time title="修改时间：2019-10-25 15:03:57" itemprop="dateModified" datetime="2019-10-25T15:03:57+08:00">2019-10-25</time>
               
             
           </span>
@@ -546,10 +546,10 @@
 </ul>
 <p>使用限制 😔</p>
 <ul>
-<li>如果不是按照索引最左列开始查找，则无法使用索引<br>  联合索引(user_name, id)  查询条件为id列时, 无法使用该联合索引</li>
+<li>如果不是按照索引最左列开始查找, 则无法使用索引<br>  联合索引(user_name, id)  查询条件为id列时, 无法使用该联合索引</li>
 <li>使用索引时不能跳过索引中的列<br>  联合索引(user_name, id, role) 查询条件包含user_name和role 只有user_name会用到该联合索引</li>
 <li>not in 和 &lt;&gt; 操作无法使用索引</li>
-<li>如果查询中有某个列的范围查询，则其右边的所有列都无法使用索引<br>  联合索引(id, role, …) id使用范围查询, 则其右边的列都无法使用索引</li>
+<li>如果查询中有某个列的范围查询, 则其右边的所有列都无法使用索引<br>  联合索引(id, role, …) id使用范围查询, 则其右边的列都无法使用索引</li>
 </ul>
 <h4 id="Hash索引"><a href="#Hash索引" class="headerlink" title="Hash索引"></a>Hash索引</h4><p>特点:</p>
 <ul>
