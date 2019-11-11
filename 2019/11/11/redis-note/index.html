@@ -96,20 +96,23 @@
 
 
 
-  <meta name="description" content="粗略看了下集合类的常用类，没耐心看源码，看了到面试那会也忘了，就简单记录下各个类的基本特点吧(摸鱼真爽) 先来张架构图撑下场面，好看的">
-<meta name="keywords" content="Basic,Java">
+  <meta name="description" content="看网课的一些笔记 📝">
+<meta name="keywords" content="Redis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java集合类归纳">
-<meta property="og:url" content="http://yoursite.com/2019/10/12/collection-map/index.html">
+<meta property="og:title" content="Redis-Note">
+<meta property="og:url" content="http://yoursite.com/2019/11/11/redis-note/index.html">
 <meta property="og:site_name" content="AYAHIRO&#39;S BLOG">
-<meta property="og:description" content="粗略看了下集合类的常用类，没耐心看源码，看了到面试那会也忘了，就简单记录下各个类的基本特点吧(摸鱼真爽) 先来张架构图撑下场面，好看的">
+<meta property="og:description" content="看网课的一些笔记 📝">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/10/12/collection-map/Collection架构.jpg">
-<meta property="og:updated_time" content="2019-09-02T05:47:30.919Z">
+<meta property="og:image" content="http://yoursite.com/2019/11/11/redis-note/redis_logo.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/11/redis-note/rdb配置.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/11/redis-note/aof配置.png">
+<meta property="og:image" content="http://yoursite.com/2019/11/11/redis-note/rdb_vs_aof.png">
+<meta property="og:updated_time" content="2019-11-11T13:11:05.027Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java集合类归纳">
-<meta name="twitter:description" content="粗略看了下集合类的常用类，没耐心看源码，看了到面试那会也忘了，就简单记录下各个类的基本特点吧(摸鱼真爽) 先来张架构图撑下场面，好看的">
-<meta name="twitter:image" content="http://yoursite.com/2019/10/12/collection-map/Collection架构.jpg">
+<meta name="twitter:title" content="Redis-Note">
+<meta name="twitter:description" content="看网课的一些笔记 📝">
+<meta name="twitter:image" content="http://yoursite.com/2019/11/11/redis-note/redis_logo.png">
 
 
 
@@ -119,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/10/12/collection-map/">
+  <link rel="canonical" href="http://yoursite.com/2019/11/11/redis-note/">
 
 
 
@@ -129,7 +132,7 @@
   };
 </script>
 
-  <title>java集合类归纳 | AYAHIRO'S BLOG</title>
+  <title>Redis-Note | AYAHIRO'S BLOG</title>
   
 
 
@@ -332,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/12/collection-map/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/11/redis-note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ayahiro">
@@ -349,7 +352,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java集合类归纳
+          <h1 class="post-title" itemprop="name headline">Redis-Note
 
               
             
@@ -375,24 +378,12 @@
                 
               
 
-              <time title="创建时间：2019-10-12 21:42:21" itemprop="dateCreated datePublished" datetime="2019-10-12T21:42:21+08:00">2019-10-12</time>
+              <time title="创建时间：2019-11-11 14:42:09 / 修改时间：21:11:05" itemprop="dateCreated datePublished" datetime="2019-11-11T14:42:09+08:00">2019-11-11</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-09-02 13:47:30" itemprop="dateModified" datetime="2019-09-02T13:47:30+08:00">2019-09-02</time>
               
             
           </span>
@@ -409,7 +400,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数据库/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a></span>
 
                 
                 
@@ -451,85 +442,73 @@
       
 
       
-        <p>粗略看了下集合类的常用类，没耐心看源码，看了到面试那会也忘了，就简单记录下各个类的基本特点吧(摸鱼真爽)</p>
-<p>先来张架构图撑下场面，好看的<br><img src="/2019/10/12/collection-map/Collection架构.jpg" alt="Collection架构"></p>
+        <p><img src="/2019/11/11/redis-note/redis_logo.png" alt="redis_logo"></p>
+<p>看网课的一些笔记 📝</p>
 <a id="more"></a>
-<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>接口特性：有序的，元素可重复，允许元素为null</p>
-<h4 id="ArrayList-🔥"><a href="#ArrayList-🔥" class="headerlink" title="ArrayList 🔥"></a>ArrayList 🔥</h4><ul>
-<li>底层结构是<strong>数组</strong>，初始容量为10，每次扩容1.5倍</li>
-<li>在增删时，用的是数组复制System.arraycopy方法，是native方法，效率不错</li>
-<li>适合随机查找和遍历，不适合插入和删除</li>
-<li>非线程安全</li>
+<h3 id="持久化之RDB-💿"><a href="#持久化之RDB-💿" class="headerlink" title="持久化之RDB 💿"></a>持久化之RDB 💿</h3><p>RBD (Redis DataBase)</p>
+<h4 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h4><p>redis会单独fork一个子进程来进行持久化, 会先将数据写入到一个临时文件中, 待持久化过程结束了, 再用这个临时文件替换上次持久化好的文件.<br>整个过程, 主进程不进行任何IO操作, 这就确保了极高的性能.<br>如果需要进行大规模数据的恢复, 且对数据回复的完整性不是特别敏感, RDB比AOF方式更加高效, RDB的缺点是最后一次持久化后的数据可能丢失</p>
+<p>fork的作用是复制一个与当前进程一样的进程. 新进程的所有数据(变量, 环境变量, 程序计数器等), 数值都和原进程一样, 但是一个全新的进程, 并作为原进程的子进程</p>
+<p>RDB保存的是dump.rdb文件</p>
+<h4 id="配置位置"><a href="#配置位置" class="headerlink" title="配置位置"></a>配置位置</h4><p><img src="/2019/11/11/redis-note/rdb配置.png" alt="rdb配置"></p>
+<h4 id="如何触发rdb快照"><a href="#如何触发rdb快照" class="headerlink" title="如何触发rdb快照"></a>如何触发rdb快照</h4><ul>
+<li>配置文件中的默认快照配置 =&gt; 冷拷贝后重新使用 cp dump.rdb dump_new.rdb</li>
+<li>save/bgsave命令<ul>
+<li>save 只管保存, 全部阻塞</li>
+<li>bgsave 会在后台异步进行快照操作, 快照同时还可以响应客户端请求. 可以通过lastsave命令获取最后一次成功执行快照的时间</li>
 </ul>
-<h4 id="LinkedList-🔥"><a href="#LinkedList-🔥" class="headerlink" title="LinkedList 🔥"></a>LinkedList 🔥</h4><ul>
-<li>底层结构是<strong>双向链表</strong></li>
-<li>实现Deque接口，可以像栈和队列操作它</li>
-<li>适合插入和删除，不适合查找</li>
-<li>非线程安全</li>
+</li>
+<li>执行flushall命令, 会产生空的dump.rdb, 无意义</li>
 </ul>
-<h4 id="Vector"><a href="#Vector" class="headerlink" title="Vector"></a>Vector</h4><ul>
-<li>底层结构是<strong>数组</strong>，初始容量为10，每次扩容2倍</li>
-<li>线程安全，但不推荐，可以使用List list = Collections.synchronizedList(new ArrayList(…));</li>
+<h4 id="如何恢复"><a href="#如何恢复" class="headerlink" title="如何恢复"></a>如何恢复</h4><ul>
+<li>将dump.rdb移动到redis安装目录并启动服务即可</li>
+<li>config get dir 获取安装目录</li>
 </ul>
-<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><p>存储key-value键值对，没有实现Collection接口</p>
-<h4 id="HashMap-🔥"><a href="#HashMap-🔥" class="headerlink" title="HashMap 🔥"></a>HashMap 🔥</h4><ul>
-<li>底层结构是<strong>散列表+红黑树</strong>，初始容量为16，装载因子0.75，每次扩容2倍</li>
-<li>key不可重复，允许key和value为null</li>
-<li>存储无序</li>
-<li>非线程安全</li>
-</ul>
-<h4 id="LinkedHashMap"><a href="#LinkedHashMap" class="headerlink" title="LinkedHashMap"></a>LinkedHashMap</h4><ul>
-<li>底层结构是<strong>散列表+红黑树+双向链表</strong>，父类是HashMap</li>
-<li>允许key和value为null</li>
-<li>插入有序</li>
-<li>提供两种遍历顺序，访问顺序和插入顺序（默认）</li>
-<li>非线程安全</li>
-</ul>
-<h4 id="TreeMap-🔥"><a href="#TreeMap-🔥" class="headerlink" title="TreeMap 🔥"></a>TreeMap 🔥</h4><ul>
-<li>底层结构是<strong>红黑树</strong></li>
-<li>不允许key为null</li>
-<li>使用Comparator/Comparable实现排序</li>
-<li>可以根据key进行排序，默认使用key的自然排序</li>
-<li>非线程安全</li>
-</ul>
-<h4 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h4><ul>
-<li>底层结构是<strong>散列表</strong></li>
-<li>不允许key或value为null</li>
-<li>线程安全，但效率低，已过时</li>
-</ul>
-<h4 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h4><ul>
-<li>底层结构是<strong>散列表+红黑树</strong></li>
-<li>key和value都不能为null</li>
-<li>使用锁分段技术保证线程安全</li>
-</ul>
-<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><p>Set接口特性：不允许重复的数据。检索效率低下，删除和插入效率高</p>
-<h4 id="HashSet-🔥"><a href="#HashSet-🔥" class="headerlink" title="HashSet 🔥"></a>HashSet 🔥</h4><ul>
-<li>底层结构是<strong>哈希表+红黑树</strong></li>
-<li>无序</li>
-<li>数据可为null</li>
-<li>非线程安全</li>
-</ul>
-<h4 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h4><ul>
-<li>底层结构是<strong>红黑树</strong></li>
-<li>有序，可实现排序功能</li>
-<li>数据不可为null</li>
-<li>非线程安全</li>
-</ul>
-<h4 id="LinkedHashSet"><a href="#LinkedHashSet" class="headerlink" title="LinkedHashSet"></a>LinkedHashSet</h4><ul>
-<li>底层结构是<strong>哈希表+双向链表</strong>，父类是HashSet</li>
-<li>无序</li>
-<li>数据可为null</li>
-<li>写入比HashSet强，新增和删除比HashSet差</li>
-<li>非线程安全</li>
-</ul>
-<p>参考链接</p>
+<h4 id="优劣势"><a href="#优劣势" class="headerlink" title="优劣势"></a>优劣势</h4><p>优势: 😊</p>
 <ul>
-<li><p><a href="https://www.jianshu.com/p/0d5d18ee7905" target="_blank" rel="noopener">https://www.jianshu.com/p/0d5d18ee7905</a></p>
+<li>适合大规模的数据恢复</li>
+<li>对数据完整性和一致性要求不高</li>
+</ul>
+<p>劣势: 😔</p>
+<ul>
+<li>在一定时间间隔内做一次备份, 可能丢失最后一次快照的修改</li>
+<li>fork的时候, 内存中的数据被复制了一份, 要占用大致两倍空间</li>
+</ul>
+<h3 id="持久化之AOF-📀"><a href="#持久化之AOF-📀" class="headerlink" title="持久化之AOF 📀"></a>持久化之AOF 📀</h3><p>AOF (Append Only File)</p>
+<h4 id="是什么-1"><a href="#是什么-1" class="headerlink" title="是什么"></a>是什么</h4><p><strong>以日志的形式来记录每个写操作</strong>, 将redis执行过的所有写指令记录下来(读操作不记录), 只许追加文件但不可以改写文件, redis启动之初会读取该文件重新构建数据, redis重启的话就根据日志文件的内容将写指令从前到后执行一次以完成数据的恢复工作</p>
+<p>AOF保存的是appendonly.aof文件</p>
+<p><strong>rdb和aof共存时, 先加载aof</strong></p>
+<h4 id="配置位置-1"><a href="#配置位置-1" class="headerlink" title="配置位置"></a>配置位置</h4><p><img src="/2019/11/11/redis-note/aof配置.png" alt="aof配置"></p>
+<h4 id="AOF启动-修复-恢复"><a href="#AOF启动-修复-恢复" class="headerlink" title="AOF启动/修复/恢复"></a>AOF启动/修复/恢复</h4><ul>
+<li>正常恢复<ul>
+<li>启动: 修改默认的appendonly no 改为 yes</li>
+<li>将有数据的aof文件复制一份到安装目录</li>
+<li>恢复: 重启redis然后重新加载</li>
+</ul>
 </li>
-<li><p><a href="https://blog.csdn.net/qazwsxpcm/article/details/79703898" target="_blank" rel="noopener">https://blog.csdn.net/qazwsxpcm/article/details/79703898</a></p>
+<li>异常恢复<ul>
+<li>启动: 修改默认的appendonly no 改为 yes</li>
+<li>备份被写坏的aof文件</li>
+<li>修复: redis-check-aof –fix 进行修复</li>
+<li>恢复: 重启redis然后重新加载</li>
+</ul>
 </li>
 </ul>
-
+<h4 id="Rewrite"><a href="#Rewrite" class="headerlink" title="Rewrite"></a>Rewrite</h4><p>是什么<br>AOF采用文件追加的方式, 为了避免文件越来越大, 新增了重写机制, 当aof文件的大小超过所设定的阈值时, redis就会启动aof文件的内容压缩, 只保留可以恢复数据的最小指令集, 可以使用bgrewriteaof命令</p>
+<p>重写原理<br>aof文件持续增长而过大时, 会fork出一条新进程来将文件重写(先写临时文件再rename). 遍历新进程内存中的数据, 为每条记录写一次set命令. 重写aof文件时, 并不会读取旧的aof文件, 而是将整个内存中的数据库内容用命令了方式重写了一个新的aof文件</p>
+<p>触发机制<br>redis会记录上次重写时的aof文件大小, 默认配置是当aof文件大小是上次rewrite后大小的一倍且文件大于64MB时触发</p>
+<h4 id="优劣势-1"><a href="#优劣势-1" class="headerlink" title="优劣势"></a>优劣势</h4><p>优势: 😊</p>
+<ul>
+<li>每修改同步: appendfsync always 同步持久化 每次发生数据变更会被立即记录到磁盘, 性能较差但数据完整性比较高</li>
+<li>每秒同步: appendfsync everysec 异步操作, 每秒记录 如果一秒内宕机, 有数据丢失</li>
+<li>不同步: appendfsync no 从不同步</li>
+</ul>
+<p>劣势: 😔</p>
+<ul>
+<li>相同数据集的数据而言aof文件要远大于rdb文件, 恢复速度慢于rdb</li>
+<li>aof运行效率要慢于rdb, 每秒同步策略效率较好, 不同步效率和rdb相同</li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p><img src="/2019/11/11/redis-note/rdb_vs_aof.png" alt="rdb_vs_aof"></p>
+<h3 id="事务-📋"><a href="#事务-📋" class="headerlink" title="事务 📋"></a>事务 📋</h3><h3 id="消息订阅发布-📬"><a href="#消息订阅发布-📬" class="headerlink" title="消息订阅发布 📬"></a>消息订阅发布 📬</h3><h3 id="主从复制-💾"><a href="#主从复制-💾" class="headerlink" title="主从复制 💾"></a>主从复制 💾</h3>
       
     </div>
 
@@ -552,9 +531,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Basic/" rel="tag"># Basic</a>
-          
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/Redis/" rel="tag"># Redis</a>
           
         </div>
       
@@ -567,8 +544,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/12/builder-deep_clone/" rel="next" title="设计模式之建造者模式和原型模式(深/浅复制问题)">
-                <i class="fa fa-chevron-left"></i> 设计模式之建造者模式和原型模式(深/浅复制问题)
+              <a href="/2019/11/08/前后端交互演变/" rel="next" title="前后端交互演变">
+                <i class="fa fa-chevron-left"></i> 前后端交互演变
               </a>
             
           </div>
@@ -576,10 +553,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/12/command-responsibility/" rel="prev" title="设计模式之命令模式和责任链模式">
-                设计模式之命令模式和责任链模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -803,7 +776,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#List"><span class="nav-number">1.</span> <span class="nav-text">List</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ArrayList-🔥"><span class="nav-number">1.1.</span> <span class="nav-text">ArrayList 🔥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedList-🔥"><span class="nav-number">1.2.</span> <span class="nav-text">LinkedList 🔥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vector"><span class="nav-number">1.3.</span> <span class="nav-text">Vector</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map"><span class="nav-number">2.</span> <span class="nav-text">Map</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HashMap-🔥"><span class="nav-number">2.1.</span> <span class="nav-text">HashMap 🔥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedHashMap"><span class="nav-number">2.2.</span> <span class="nav-text">LinkedHashMap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TreeMap-🔥"><span class="nav-number">2.3.</span> <span class="nav-text">TreeMap 🔥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hashtable"><span class="nav-number">2.4.</span> <span class="nav-text">Hashtable</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ConcurrentHashMap"><span class="nav-number">2.5.</span> <span class="nav-text">ConcurrentHashMap</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set"><span class="nav-number">3.</span> <span class="nav-text">Set</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HashSet-🔥"><span class="nav-number">3.1.</span> <span class="nav-text">HashSet 🔥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TreeSet"><span class="nav-number">3.2.</span> <span class="nav-text">TreeSet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedHashSet"><span class="nav-number">3.3.</span> <span class="nav-text">LinkedHashSet</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#持久化之RDB-💿"><span class="nav-number">1.</span> <span class="nav-text">持久化之RDB 💿</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#是什么"><span class="nav-number">1.1.</span> <span class="nav-text">是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置位置"><span class="nav-number">1.2.</span> <span class="nav-text">配置位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何触发rdb快照"><span class="nav-number">1.3.</span> <span class="nav-text">如何触发rdb快照</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何恢复"><span class="nav-number">1.4.</span> <span class="nav-text">如何恢复</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优劣势"><span class="nav-number">1.5.</span> <span class="nav-text">优劣势</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#持久化之AOF-📀"><span class="nav-number">2.</span> <span class="nav-text">持久化之AOF 📀</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#是什么-1"><span class="nav-number">2.1.</span> <span class="nav-text">是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置位置-1"><span class="nav-number">2.2.</span> <span class="nav-text">配置位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AOF启动-修复-恢复"><span class="nav-number">2.3.</span> <span class="nav-text">AOF启动/修复/恢复</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rewrite"><span class="nav-number">2.4.</span> <span class="nav-text">Rewrite</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#优劣势-1"><span class="nav-number">2.5.</span> <span class="nav-text">优劣势</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">2.6.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务-📋"><span class="nav-number">3.</span> <span class="nav-text">事务 📋</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消息订阅发布-📬"><span class="nav-number">4.</span> <span class="nav-text">消息订阅发布 📬</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主从复制-💾"><span class="nav-number">5.</span> <span class="nav-text">主从复制 💾</span></a></li></ol></div>
             
 
           </div>
